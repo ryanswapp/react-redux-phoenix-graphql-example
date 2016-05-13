@@ -30,8 +30,7 @@ userActions.fetchUsers = function fetchUsers() {
     client.query(`
       {
         users {
-          name,
-          email
+          name
         }
       }
     `).then(result => {
@@ -39,6 +38,13 @@ userActions.fetchUsers = function fetchUsers() {
       dispatch({
         type: 'FETCH_USERS',
         users: result.users
+      });
+    }).catch(function(response) {
+      console.log('Fail');
+      dispatch(notificationActions.addNotification('danger', 'The server threw an error'));
+      dispatch({
+        type: 'FAILED_FETCH_USERS',
+        error: response
       });
     });
   }
