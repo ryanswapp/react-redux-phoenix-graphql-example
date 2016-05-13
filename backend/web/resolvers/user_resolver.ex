@@ -3,6 +3,10 @@ defmodule AbsintheTest.UserResolver do
   alias AbsintheTest.Repo
   alias AbsintheTest.User
 
+  def all(_args, _info) do
+    {:ok, Repo.all(User)}
+  end
+
   def find(%{id: id}, _info) do
     query = from u in User,
         where: u.id == ^id,

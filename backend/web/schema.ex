@@ -8,6 +8,11 @@ defmodule AbsintheTest.Schema do
       resolve &AbsintheTest.PostResolver.all/2
     end
 
+    @desc "Get all users"
+    field :users, list_of(:user) do
+      resolve &AbsintheTest.UserResolver.all/2
+    end
+
     @desc "Get a user of the blog"
     field :user, type: :user do
       arg :id, non_null(:id)

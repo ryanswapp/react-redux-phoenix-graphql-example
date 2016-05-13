@@ -35,5 +35,7 @@ defmodule AbsintheTest.Endpoint do
     key: "_absinthe_test_key",
     signing_salt: "Ax2PRLxp"
 
+  plug CORSPlug, [origin: "http://localhost:3000"]
+
   plug AbsintheTest.Router
 end
