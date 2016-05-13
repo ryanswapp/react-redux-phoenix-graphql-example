@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #TYPOGRAPHY_SETTINGS
+\*------------------------------------*/
+
+$type-normal:                500;
+$type-extra-bold:            800;
+
+$proxima-font-family:   'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$base-font-family:      $proxima-font-family;
+$base-font-weight:      $type-normal;
+
+$header-font-family:    $proxima-font-family;
+$header-font-weight:    $type-extra-bold;
+
+h1, h2, h3, h4, h5, h6 {
+  // font-family: $header-font-family;
+  // font-weight: $header-font-weight;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 800;
+}

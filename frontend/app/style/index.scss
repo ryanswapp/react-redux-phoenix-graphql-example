@@ -1,0 +1,12 @@
+// MAIN
+@import "variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "typography";
+
+html,
+body,
+#app {
+  height: 100%;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}

@@ -1,0 +1,17 @@
+.main-menu {
+	width: 300px;
+}
+
+.item {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+.item a {
+	color: black;
+	text-decoration: none;
+}
+
+.item a:hover {
+	color: blue;
+}
