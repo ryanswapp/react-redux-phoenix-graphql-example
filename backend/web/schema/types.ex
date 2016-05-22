@@ -6,7 +6,9 @@ defmodule AbsintheTest.Schema.Types do
     field :id, :id
     field :name, :string
     field :email, :string
-    field :posts, list_of(:post)
+    field :posts, list_of(:post) do
+      resolve &AbsintheTest.PostResolver.all/2
+    end
     field :inserted_at, :string
     field :updated_at, :string
   end
@@ -16,7 +18,7 @@ defmodule AbsintheTest.Schema.Types do
     field :id, :id
     field :title, :string
     field :body, :string
-    field :user_id, :user
+    field :user_id, :string
     field :inserted_at, :string
     field :updated_at, :string
   end

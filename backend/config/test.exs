@@ -10,10 +10,10 @@ config :absinthe_test, AbsintheTest.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :absinthe_test, AbsintheTest.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "absinthe_test_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+# config :absinthe_test, AbsintheTest.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "absinthe_test_test",
+#   hostname: "localhost",
+#   pool: Ecto.Adapters.SQL.Sandbox

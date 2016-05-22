@@ -33,10 +33,14 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :absinthe_test, AbsintheTest.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "absinthe_test_dev",
-  hostname: "localhost",
-  pool_size: 10
+# config :absinthe_test, AbsintheTest.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "absinthe_test_dev",
+#   hostname: "localhost",
+#   pool_size: 10
+
+# config :absinthe_test, AbsintheTest.Repo,
+#   adapter: RethinkDB.Ecto,
+#   database: "absinthe"

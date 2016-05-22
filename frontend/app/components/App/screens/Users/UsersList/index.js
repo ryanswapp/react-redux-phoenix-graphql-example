@@ -1,16 +1,22 @@
 import React from 'react';
 import Actions from 'redux/actions.js';
-import { connect } from 'react-redux';
+import {
+  connect
+} from 'react-redux';
 
 const UsersList = React.createClass({
-  componentDidMount () {
+  componentDidMount() {
 
-    const { dispatch } = this.props;
+    const {
+      dispatch
+    } = this.props;
 
     dispatch(Actions.users.fetchUsers());
   },
-  render () {
-    const { users } = this.props;
+  render() {
+    const {
+      users
+    } = this.props;
     return (
       <div className="container">
         <h1>Users List</h1>
@@ -27,7 +33,7 @@ const UsersList = React.createClass({
 });
 
 function mapStateToProps(state) {
-	return { 
+  return {
     users: state.users,
   };
 }

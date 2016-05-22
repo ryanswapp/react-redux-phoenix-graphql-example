@@ -10,7 +10,7 @@ defmodule AbsintheTest do
       # Start the endpoint when the application starts
       supervisor(AbsintheTest.Endpoint, []),
       # Start the Ecto repository
-      supervisor(AbsintheTest.Repo, []),
+      supervisor(Database, [[port: 28015, host: "localhost", db: :absinthe]]),
       # Here you could define other workers and supervisors as children
       # worker(AbsintheTest.Worker, [arg1, arg2, arg3]),
     ]

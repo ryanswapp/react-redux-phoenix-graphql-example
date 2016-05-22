@@ -1,19 +1,20 @@
 defmodule AbsintheTest.UserResolver do
-  import Ecto.Query
-  alias AbsintheTest.Repo
+  alias RethinkDB.Query
   alias AbsintheTest.User
+  alias Rethink.Helpers, as: RH
 
-  def all(_args, _info) do
-    {:ok, Repo.all(User)}
+  def all(_args, info) do
+    IO.inspect info
+    result = Query.table("users")
+    |> Database.run
+
+    {:ok, RH.load_result(User, result)}
   end
 
   def find(%{id: id}, _info) do
-    query = from u in User,
-        where: u.id == ^id,
-        preload: :posts
-    case Repo.one(query) do
-      nil -> {:error, "User id #{id} not found"}
-      user -> {:ok, user}
-    end
+    result = Query.table("users")
+    |> Query.get(id) |> Database.run
+
+    {:ok, RH.load_result(User, result)}
   end
 end

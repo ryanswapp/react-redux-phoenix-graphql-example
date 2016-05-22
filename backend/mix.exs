@@ -19,7 +19,8 @@ defmodule AbsintheTest.Mixfile do
   def application do
     [mod: {AbsintheTest, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :absinthe, :absinthe_plug]]
+                    :phoenix_ecto, :absinthe, :absinthe_plug, :timex]]
+    # Removed :postgrex
   end
 
   # Specifies which paths to compile per environment.
@@ -31,7 +32,7 @@ defmodule AbsintheTest.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [{:phoenix, "~> 1.1.4"},
-     {:postgrex, ">= 0.0.0"},
+     # {:postgrex, ">= 0.0.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
@@ -40,7 +41,9 @@ defmodule AbsintheTest.Mixfile do
      {:absinthe, "~> 1.1.0"},
      {:absinthe_plug, "~> 1.1"},
      {:faker, "~> 0.5"},
-     {:cors_plug, "~> 1.1"}]
+     {:cors_plug, "~> 1.1"},
+     {:rethinkdb, "~> 0.4.0"},
+     {:timex, "~> 2.1.4"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

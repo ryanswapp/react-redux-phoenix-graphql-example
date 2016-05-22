@@ -30,7 +30,7 @@ defmodule AbsintheTest.Web do
     quote do
       use Phoenix.Controller
 
-      alias AbsintheTest.Repo
+      # alias AbsintheTest.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
@@ -65,7 +65,7 @@ defmodule AbsintheTest.Web do
     quote do
       use Phoenix.Channel
 
-      alias AbsintheTest.Repo
+      # alias AbsintheTest.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
       import AbsintheTest.Gettext
