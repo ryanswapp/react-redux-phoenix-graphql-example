@@ -4,7 +4,10 @@ defmodule AbsintheTest.UserResolver do
   alias AbsintheTest.User
 
   def all(_args, _info) do
-    {:ok, Repo.all(User)}
+    users = User
+    |> preload(:posts)
+    |> Repo.all
+    {:ok, users}
   end
 
   def find(%{id: id}, _info) do
